@@ -1,0 +1,405 @@
+/* ============================================
+   TOKENS
+   ============================================ */
+:root {
+  --wall: #FAFAF8;
+  --wall-dim: #F1EFE9;
+  --ink: #12181F;
+  --ink-soft: #4A5460;
+  --navy: #16283F;
+  --accent: #8C2F2F;
+  --accent-soft: #8C2F2F1a;
+  --frame: #E4E0D6;
+  --line: #D9D5CA;
+
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --max-w: 1120px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Intentionally not auto-switching to dark mode: the gallery-wall
+     white is a deliberate design choice, not a default we want undone. */
+}
+
+/* ============================================
+   RESET
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--wall);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, video { max-width: 100%; display: block; }
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ============================================
+   NAV
+   ============================================ */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem var(--gutter);
+  mix-blend-mode: difference;
+}
+
+.site-nav__mark {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-nav__links {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2.25rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav__links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s var(--ease);
+}
+.site-nav__links a:hover,
+.site-nav__links a:focus-visible { border-color: currentColor; }
+
+/* ============================================
+   HERO / INTRO
+   ============================================ */
+.hero {
+  min-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(6rem, 14vw, 9rem) var(--gutter) 3rem;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.hero__eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1.1rem;
+}
+
+.hero__name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 6.5vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+  max-width: 16ch;
+}
+
+.hero__intro {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin: 0;
+}
+
+/* ============================================
+   GALLERY — the "framed artwork" pattern
+   ============================================ */
+.gallery {
+  padding: 2rem var(--gutter) clamp(5rem, 10vw, 8rem);
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.gallery__label {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.artwork {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  margin: 0 auto clamp(3rem, 6vw, 4.5rem);
+  max-width: 880px;
+}
+
+.artwork__frame {
+  position: relative;
+  background: var(--wall-dim);
+  border: 10px solid #fff;
+  box-shadow:
+    0 1px 0 var(--frame),
+    0 18px 40px -18px rgba(18, 24, 31, 0.35),
+    0 2px 8px rgba(18, 24, 31, 0.12);
+  overflow: hidden;
+  border-radius: 2px;
+  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+}
+
+.artwork:hover .artwork__frame,
+.artwork:focus-visible .artwork__frame {
+  transform: translateY(-4px);
+  box-shadow:
+    0 1px 0 var(--frame),
+    0 26px 54px -18px rgba(18, 24, 31, 0.42),
+    0 4px 10px rgba(18, 24, 31, 0.14);
+}
+
+.artwork__media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  background: var(--navy);
+}
+
+.artwork__cue {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(18, 24, 31, 0.28);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+.artwork:hover .artwork__cue,
+.artwork:focus-visible .artwork__cue { opacity: 1; }
+
+.artwork__cue span {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.7);
+  padding: 0.65rem 1.2rem;
+  border-radius: 999px;
+}
+
+/* museum caption plate */
+.artwork__plate {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.95rem 0.15rem 0;
+  border-top: none;
+}
+
+.artwork__title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.artwork__meta {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.gallery__more {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  border-top: 1px dashed var(--line);
+  padding-top: 2rem;
+  margin-top: 1rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  padding: 2.5rem var(--gutter) 3rem;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.site-footer a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+.site-footer a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ============================================
+   PROJECT DETAIL PAGE
+   ============================================ */
+.project-hero {
+  padding: clamp(6rem, 12vw, 8rem) var(--gutter) 2rem;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.project-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+}
+.project-hero__back:hover { color: var(--accent); }
+
+.project-hero__title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  max-width: 20ch;
+}
+
+.project-hero__summary {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  max-width: 60ch;
+  margin: 0 0 2rem;
+}
+
+.project-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 3rem;
+}
+
+.project-hero__meta dt {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.3rem;
+}
+.project-hero__meta dd {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.project-media {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 3rem;
+}
+
+.project-media video,
+.project-media img {
+  width: 100%;
+  border-radius: 2px;
+  background: var(--navy);
+}
+
+.project-body {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 var(--gutter) 4rem;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+}
+
+.project-body h2 {
+  font-family: var(--serif);
+  color: var(--ink);
+  font-size: 1.4rem;
+  margin: 2.5rem 0 1rem;
+}
+.project-body h2:first-child { margin-top: 0; }
+.project-body p { margin: 0 0 1.2rem; }
+
+.project-gallery {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.project-gallery img {
+  width: 100%;
+  border-radius: 2px;
+  border: 6px solid #fff;
+  box-shadow: 0 10px 24px -14px rgba(18,24,31,0.35);
+}
+
+.project-gallery figcaption {
+  margin: 0.6rem 0 0;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 640px) {
+  .site-nav__links { gap: 1rem; }
+  .artwork__plate { flex-direction: column; gap: 0.2rem; align-items: flex-start; }
+  .project-gallery { grid-template-columns: 1fr; }
+  .project-hero__meta { gap: 1rem 1.5rem; }
+}
+
+@media (min-width: 1600px) {
+  :root { font-size: 17px; }
+}

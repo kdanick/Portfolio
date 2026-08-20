@@ -1,0 +1,4 @@
+Drop your poster frame here as demo-poster.jpg (a still frame from your video,
+e.g. via: ffmpeg -i demo.mp4 -ss 00:00:01 -vframes 1 demo-poster.jpg)
+
+Also drop your compressed demo video as ../video/demo.mp4
