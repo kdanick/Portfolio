@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kirenga Danick</title>
+    <meta
+      name="description"
+      content="Kirenga Danick — Computer Networks &amp; Cybersecurity student building secure systems, networks, and IoT projects."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      if (localStorage.getItem("theme") === "light") {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
+
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="font-body text-paper">
+    <button
+      id="theme-toggle"
+      class="theme-toggle"
+      type="button"
+      aria-label="Switch to light mode"
+      title="Switch to light mode"
+    >
+      <svg
+        class="theme-icon theme-icon--sun"
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+      >
+        <circle cx="12" cy="12" r="4" />
+        <path
+          d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+        />
+      </svg>
+
+      <svg
+        class="theme-icon theme-icon--moon"
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z" />
+      </svg>
+    </button>
+    <div
+      class="relative left-8 mx-auto flex max-w-6xl flex-col md:flex-row md:justify-between md:gap-8 px-6 py-12 md:px-12 md:py-24"
+    >
+      <!-- Sidebar -->
+      <header
+        class="md:fixed md:left-24 md:top-24 md:w-[calc(40%-2rem)] md:max-w-md md:py-4"
+      >
+        <div class="flex flex-col justify-between">
+          <div>
+            <h1 class="font-display text-4xl font-bold text-paper">
+              Kirenga Danick
+            </h1>
+            <h2 class="mt-3 font-display text-lg font-medium text-signal">
+              Computer Networks &amp; Cybersecurity
+            </h2>
+            <p class="mt-4 max-w-xs text-muted">
+              BSc student at Strathmore University, Nairobi — mapping how
+              networks break, and building the systems that keep them from
+              breaking.
+            </p>
+
+            <nav class="mt-16 hidden md:block" aria-label="Section navigation">
+              <ul>
+                <li>
+                  <a href="#about" class="nav-link active group"
+                    ><span class="nav-trace"></span
+                    ><span class="nav-label">About</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#coursework" class="nav-link group"
+                    ><span class="nav-trace"></span
+                    ><span class="nav-label">Coursework</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#projects" class="nav-link group"
+                    ><span class="nav-trace"></span
+                    ><span class="nav-label">Projects</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" class="nav-link group"
+                    ><span class="nav-trace"></span
+                    ><span class="nav-label">Contact</span></a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <ul class="mt-12 flex items-center gap-5 md:mt-0">
+            <li>
+              <a
+                href="https://github.com/kdanick"
+                target="_blank"
+                rel="noreferrer"
+                class="social-icon"
+                aria-label="GitHub"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.8 1.19 1.82 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.8.56A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://linkedin.com/"
+                target="_blank"
+                rel="noreferrer"
+                class="social-icon"
+                aria-label="LinkedIn"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.62 0 4.28 2.38 4.28 5.48v6.26ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:ndatinyakdanick@gmail.com"
+                class="social-icon"
+                aria-label="Email"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m2 7 10 6 10-6" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Main content -->
+      <main class="mt-16 md:ml-[calc(9*48px)] md:mt-0 md:w-[640px]">
+        <!-- About -->
+        <section id="about" class="scroll-mt-24 mb-24 md:mb-36">
+          <h3 class="section-heading">About</h3>
+          <div class="space-y-4 text-muted">
+            <p>
+              I'm a Computer Networks &amp; Cybersecurity student at Strathmore
+              University in Nairobi, spending most of my time somewhere between
+              packet captures and pull requests. My coursework runs across
+              networking, cybersecurity, wireless communications, mobile
+              development, and cryptography — and I try to actually get my hands
+              dirty with it rather than just read about it.
+            </p>
+            <p>
+              Day to day that means labbing things out in
+              <span class="text-paper">Kali Linux</span>,
+              <span class="text-paper">Cisco Packet Tracer</span>,
+              <span class="text-paper">VirtualBox</span>,
+              <span class="text-paper">Wireshark</span>, and
+              <span class="text-paper">MATLAB</span> — building networks, then
+              trying to break them, then figuring out how to defend them
+              properly.
+            </p>
+            <p>
+              Outside of coursework I build with
+              <span class="text-paper">React</span> and
+              <span class="text-paper">Node.js</span>, and tinker with
+              <span class="text-paper">IoT</span> projects for fun. I'm also
+              interested in the bigger picture around this field — things like
+              AI's climate footprint and who actually gets to benefit from
+              technological acceleration.
+            </p>
+          </div>
+        </section>
+
+        <!-- Coursework / Experience -->
+        <section id="coursework" class="scroll-mt-24 mb-24 md:mb-36">
+          <h3 class="section-heading">Coursework &amp; Lab Work</h3>
+
+          <div class="mt-4">
+            <div
+              class="card-hover -mx-3 grid grid-cols-1 gap-1 p-3 sm:grid-cols-[6.5rem_1fr]"
+            >
+              <span class="font-mono text-xs text-muted sm:pt-1">2026</span>
+              <div>
+                <h4 class="font-display text-base font-semibold text-paper">
+                  Cryptography &amp; Network Security
+                </h4>
+                <p class="mt-1 text-sm text-muted">
+                  End-to-end TLS lab in Python (custom CA, SAN certs, MITM
+                  proxy), a full PKI build-out, and CryptoMesh — a system
+                  combining Diffie–Hellman, STS, RSA-2048, AES-256-GCM, and
+                  bcrypt.
+                </p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="tag">TLS / PKI</span>
+                  <span class="tag">RSA &amp; DH</span>
+                  <span class="tag">Python</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="card-hover -mx-3 grid grid-cols-1 gap-1 p-3 sm:grid-cols-[6.5rem_1fr]"
+            >
+              <span class="font-mono text-xs text-muted sm:pt-1"
+                >2025 — 26</span
+              >
+              <div>
+                <h4 class="font-display text-base font-semibold text-paper">
+                  Offensive &amp; Defensive Security Labs
+                </h4>
+                <p class="mt-1 text-sm text-muted">
+                  OSINT reconnaissance workflows (theHarvester, recon-ng,
+                  Shodan), a Metasploitable 2 assessment covering enumeration
+                  and web analysis, and standing up Kali Linux infrastructure
+                  for lab work.
+                </p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="tag">Kali Linux</span>
+                  <span class="tag">OSINT</span>
+                  <span class="tag">Pen Testing</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="card-hover -mx-3 grid grid-cols-1 gap-1 p-3 sm:grid-cols-[6.5rem_1fr]"
+            >
+              <span class="font-mono text-xs text-muted sm:pt-1">2025</span>
+              <div>
+                <h4 class="font-display text-base font-semibold text-paper">
+                  Enterprise Networking
+                </h4>
+                <p class="mt-1 text-sm text-muted">
+                  Designed and configured a multi-site WAN in Cisco Packet
+                  Tracer — OSPF multi-area, BGP with dual ISPs, GRE tunneling,
+                  NAT overload, and ACLs — plus VLAN segmentation and inter-VLAN
+                  routing.
+                </p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="tag">Packet Tracer</span>
+                  <span class="tag">OSPF / BGP</span>
+                  <span class="tag">VLANs</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="card-hover -mx-3 grid grid-cols-1 gap-1 p-3 sm:grid-cols-[6.5rem_1fr]"
+            >
+              <span class="font-mono text-xs text-muted sm:pt-1">2025</span>
+              <div>
+                <h4 class="font-display text-base font-semibold text-paper">
+                  Wireless Communications
+                </h4>
+                <p class="mt-1 text-sm text-muted">
+                  MATLAB simulations of log-distance path loss and Monte Carlo
+                  shadowing, antenna gain and polarization calculations, and
+                  multiple-access scheme analysis (FDMA/TDMA/CDMA).
+                </p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="tag">MATLAB</span>
+                  <span class="tag">RF &amp; Antennas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="scroll-mt-24 mb-24 md:mb-36">
+          <h3 class="section-heading">Projects</h3>
+
+          <div class="space-y-2">
+            <a href="#" class="card-hover -mx-3 block p-3">
+              <h4
+                class="font-display text-base font-semibold text-paper link-underline"
+              >
+                CryptoMesh
+              </h4>
+              <p class="mt-1 text-sm text-muted">
+                A cryptographically designed messaging system combining
+                Diffie–Hellman key exchange, the Station-to-Station protocol,
+                RSA-2048, AES-256-GCM, and bcrypt for credential storage.
+              </p>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="tag">Cryptography</span>
+                <span class="tag">Python</span>
+                <span class="tag">Security Design</span>
+              </div>
+            </a>
+
+            <a href="#" class="card-hover -mx-3 block p-3">
+              <h4
+                class="font-display text-base font-semibold text-paper link-underline"
+              >
+                TLS from Scratch
+              </h4>
+              <p class="mt-1 text-sm text-muted">
+                A hands-on TLS lab: a self-signed certificate authority, SAN
+                certificates, a custom trust store, and a working MITM proxy
+                built to understand exactly where TLS trust can break down.
+              </p>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="tag">TLS</span>
+                <span class="tag">PKI</span>
+                <span class="tag">Python</span>
+              </div>
+            </a>
+
+            <a href="#" class="card-hover -mx-3 block p-3">
+              <h4
+                class="font-display text-base font-semibold text-paper link-underline"
+              >
+                Tendaji WAN
+              </h4>
+              <p class="mt-1 text-sm text-muted">
+                A full enterprise WAN build for a fictional multi-site
+                organization — serial links, GRE tunnels, OSPF multi-area, BGP
+                with dual ISPs, PPP/CHAP, NAT overload, and ACLs.
+              </p>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="tag">Cisco Packet Tracer</span>
+                <span class="tag">Routing &amp; Switching</span>
+              </div>
+            </a>
+
+            <a href="#" class="card-hover -mx-3 block p-3">
+              <h4
+                class="font-display text-base font-semibold text-paper link-underline"
+              >
+                COMESA Food Balance App — Usability Review
+              </h4>
+              <p class="mt-1 text-sm text-muted">
+                Focus-group usability evaluation of a mobile agricultural app,
+                scoring accessibility and mobile UX against a structured review
+                scorecard.
+              </p>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="tag">Mobile UX</span>
+                <span class="tag">Accessibility</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="scroll-mt-24 mb-24 md:mb-12">
+          <h3 class="section-heading">Contact</h3>
+          <p class="max-w-sm text-muted">
+            Currently looking for internship and junior roles in networking or
+            cybersecurity. My inbox is open — for opportunities, questions, or
+            just to talk about networks.
+          </p>
+          <a
+            href="mailto:you@example.com"
+            class="mt-6 inline-block font-display font-semibold text-signal link-underline"
+          >
+            Say hello →
+          </a>
+
+          <footer class="mt-24 font-mono text-xs text-muted">
+            Built with Tailwind CSS · Deployed on GitHub Pages
+          </footer>
+        </section>
+      </main>
+    </div>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>

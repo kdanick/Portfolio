@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+
+    --color-bg: 11 17 32;
+    --color-surface: 17 26 46;
+    --color-text: 228 233 242;
+    --color-muted: 139 147 167;
+    --color-accent: 245 166 35;
+    --color-grid: 30 41 59;
+  }
+  [data-theme="light"] {
+    color-scheme: light;
+
+    --color-bg: 244 246 251;
+    --color-surface: 230 234 242;
+    --color-text: 11 17 32;
+    --color-muted: 91 100 120;
+    --color-accent: 199 122 15;
+    --color-grid: 199 206 221;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: rgb(var(--color-bg));
+    background-image:
+      linear-gradient(rgb(var(--color-grid) / 0.35) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--color-grid) / 0.35) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-attachment: fixed;
+  }
+  ::selection {
+    background-color: rgb(var(--color-accent));
+    color: rgb(var(--color-bg));
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--color-accent));
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .theme-toggle {
+    position: fixed;
+    left: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 50;
+
+    display: inline-flex;
+    height: 2.5rem;
+    width: 2.5rem;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9999px;
+    color: rgb(var(--color-muted));
+
+    transition:
+      color 300ms,
+      background-color 300ms;
+  }
+
+  .theme-toggle:hover {
+    background-color: rgb(var(--color-surface));
+    color: rgb(var(--color-accent));
+  }
+
+  .theme-toggle svg {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+  .theme-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+  .theme-icon--sun {
+    display: none;
+  }
+  [data-theme="light"] .theme-icon--sun {
+    display: block;
+  }
+  [data-theme="light"] .theme-icon--moon {
+    display: none;
+  }
+  .nav-link {
+    @apply flex items-center gap-4 py-2;
+  }
+  .nav-trace {
+    @apply h-px w-8 bg-slate-line transition-all duration-300 group-hover:w-14 group-hover:bg-signal;
+  }
+  .nav-link.active .nav-trace {
+    @apply w-14 bg-signal;
+  }
+  .nav-link.active .nav-label {
+    @apply text-paper;
+  }
+  .nav-label {
+    @apply text-xs font-mono uppercase tracking-widest text-muted transition-colors duration-300 group-hover:text-paper;
+  }
+
+  .social-icon {
+    @apply text-muted transition-colors duration-300 hover:text-signal hover:-translate-y-0.5 inline-block transition-transform;
+  }
+
+  .section-heading {
+    @apply sticky top-0 z-10 -mx-6 mb-4 w-screen bg-ink/80 px-6 py-5 font-display text-sm font-semibold uppercase tracking-widest text-paper backdrop-blur md:static md:mx-0 md:w-auto md:bg-transparent md:px-0 md:py-0 md:normal-case md:tracking-wide;
+  }
+
+  .card-hover {
+    @apply relative rounded-md transition-colors duration-300 hover:bg-slate-card/60;
+  }
+
+  .tag {
+    @apply rounded-full border border-slate-line px-3 py-1 font-mono text-xs text-muted;
+  }
+
+  .link-underline {
+    @apply bg-gradient-to-r from-signal to-signal bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 hover:bg-[length:100%_1px];
+  }
+}
