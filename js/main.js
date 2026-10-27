@@ -63,26 +63,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("main section[id]");
   const navLinks = document.querySelectorAll(".nav-link");
 
-  const setActive = (id) => {
-    navLinks.forEach((link) => {
-      const isMatch = link.getAttribute("href") === `#${id}`;
-      link.classList.toggle("active", isMatch);
-    });
-  };
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActive(entry.target.id);
-        }
+  if (sections.length > 0 && navLinks.length > 0) {
+    const setActive = (id) => {
+      navLinks.forEach((link) => {
+        const isMatch = link.getAttribute("href") === `#${id}`;
+        link.classList.toggle("active", isMatch);
       });
-    },
-    {
-      rootMargin: "-20% 0px -70% 0px",
-      threshold: 0,
-    },
-  );
+    };
 
-  sections.forEach((section) => observer.observe(section));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-20% 0px -70% 0px",
+        threshold: 0,
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  }
 });

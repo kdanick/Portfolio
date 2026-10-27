@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./js/**/*.js"],
+  content: ["./*.html", "./js/**/*.js"],
   theme: {
     extend: {
       colors: {
@@ -19,9 +19,6 @@ module.exports = {
         display: ["'Space Grotesk'", "sans-serif"],
         body: ["Inter", "sans-serif"],
         mono: ["'JetBrains Mono'", "monospace"],
-      },
-      maxWidth: {
-        content: "640px",
       },
     },
   },
