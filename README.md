@@ -2,5 +2,5 @@
 
 site is live at:
 
-- `https://yourusername.github.io` or
-- `https://yourusername.github.io/Portfolio`
+- `https://kdanick.github.io` or
+- `https://kdanick.github.io/Portfolio`
