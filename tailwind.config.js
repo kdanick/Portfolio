@@ -4,14 +4,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: "rgb(var(--color-bg) / <alpha-value>)",
+        ink: "var(--bg)",
         slate: {
-          card: "rgb(var(--color-surface) / <alpha-value>)",
-          line: "rgb(var(--color-grid) / <alpha-value>)",
+          card: "var(--surface)",
+          line: "var(--border)",
         },
-        paper: "rgb(var(--color-text) / <alpha-value>)",
-        muted: "rgb(var(--color-muted) / <alpha-value>)",
-        signal: "rgb(var(--color-accent) / <alpha-value>)",
+        paper: "var(--text-bold)",
+        body: "var(--text)",
+        muted: "var(--muted)",
+        signal: "var(--link)",
+        "on-link": "var(--on-link)",
       },
       fontFamily: {
         display: ["'Space Grotesk'", "sans-serif"],

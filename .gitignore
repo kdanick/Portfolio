@@ -27,3 +27,6 @@ Desktop.ini
 coverage/
 dist/
 build/
+
+# Local notes
+todo.txt
